@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>Maj gout!</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f7fa;
+    padding:40px;
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:8px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+h2{
+    margin-top:30px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    box-sizing:border-box;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.group{
+    margin-top:10px;
+}
+
+.group label{
+    font-weight:normal;
+    display:block;
+}
+
+button{
+    margin-top:30px;
+    padding:14px;
+    width:100%;
+    border:none;
+    background:#000000;
+    color:white;
+    font-size:16px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#201f1f;
+}
+
+.group-item{
+    display:grid;
+    grid-template-columns: 1fr 30px;
+    align-items:center;
+    margin:8px 0;
+}
+
+.group-item label{
+    font-weight:normal;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>Zaujali jsme Vás? Napište nám!</h1>
+
+<form action="/poptavka" method="POST" enctype="multipart/form-data">
+
+<h2>Základní informace</h2>
+
+<label>Firma</label>
+<input type="text" name="firma" placeholder="Název firmy">
+
+<label>Kontaktní osoba – jméno</label>
+<input type="text" name="kontaktni_osoba" placeholder="Jak Vás máme oslovovat">
+
+<label>Email</label>
+<input type="email" name="email">
+
+<label>Telefon</label>
+<input type="tel" name="telefon">
+
+<label>Budget</label>
+<input type="text" name="budget" placeholder="Jaký máte přibližný rozpočet">
+
+<label>Základní popis firmy</label>
+<textarea name="popis_firmy" placeholder="Jednoduše popište, co vaše firma dělá + cíl/záměr webu"></textarea>
+
+<label>Požadavky + představy, inspirace</label>
+<textarea name="pozadavky" placeholder="Barvy, styl, vzory, funkce, inspirace z jiných webů..."></textarea>
+
+<label>Vložení obrázků a souborů</label>
+<input type="file" name="soubory[]" multiple>
+
+<label>Kdy vás můžeme kontaktovat?</label>
+<input type="datetime-local" name="kontakt_cas">
+
+<label>Deadline</label>
+<input type="date" name="deadline">
+
+
+<h2><b>Extra služby</b></h2>
+
+<div class="group">
+
+<div class="group-item">
+<label><b>Výstupy GA4</b> - Přehled dat z Google Analytics 4 bez složité analýzy</label>
+<input type="checkbox" name="bonus[]" value="ga4">
+</div>
+
+<div class="group-item">
+<label><b>Customer channel</b> - Jasný přehled, odkud přichází Vaši zákazníci</label>
+<input type="checkbox" name="bonus[]" value="customer">
+</div>
+
+<div class="group-item">
+<label><b>Kalendář na rezervačky</b> - Jednoduchý rezervační systém pro vaše zákazníky</label>
+<input type="checkbox" name="bonus[]" value="rezervace">
+</div>
+
+<div class="group-item">
+<label><b>Kampaně</b> - Strategicky řízené marketingové kampaně s měřitelnými výsledky</label>
+<input type="checkbox" name="bonus[]" value="cyber">
+</div>
+
+<div class="group-item">
+<label><b>Recenze</b> - Systém pro sběr, správu a prezentaci zákaznických recenzí</label>
+<input type="checkbox" name="bonus[]" value="recenze">
+</div>
+
+</div>
+
+<button type="submit">Odeslat poptávku</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
